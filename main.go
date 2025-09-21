@@ -14,6 +14,12 @@ import (
 	"time"
 )
 
+var (
+	version   = "dev"
+	buildTime = "unknown"
+	gitCommit = "unknown"
+)
+
 func main() {
 	port := flag.String("port", "80", "Port to listen on")
 	wait := flag.Bool("wait", false, "Wait for file to have content for response")
