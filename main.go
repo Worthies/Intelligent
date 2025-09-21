@@ -21,6 +21,18 @@ func main() {
 	timeout := flag.Duration("timeout", 180*time.Second, "Timeout for waiting in -wait mode")
 	flag.Parse()
 
+	flag.Usage = func() {
+		fmt.Fprintf(os.Stderr, "Usage: %s [options]\n\n", os.Args[0])
+		fmt.Fprintf(os.Stderr, "A simple HTTP server for handling ticket requests.\n\n")
+		fmt.Fprintf(os.Stderr, "Options:\n")
+		flag.PrintDefaults()
+	}
+
+	if len(os.Args) == 1 {
+		flag.Usage()
+		os.Exit(0)
+	}
+
 	if *wait && *target != "" {
 		log.Fatal("Cannot use -wait and -target at the same time")
 	}
