@@ -52,6 +52,8 @@ When a request is received, it prints the cURL command and the expected response
 
 Forwards requests to the target URL, saves responses to files, and returns the file paths.
 
+> Several useful site: https://justsoso.fun/other/JetBrains-License-Server.html
+
 ### Options
 
 - `-port`: Port to listen on (default: 80)
